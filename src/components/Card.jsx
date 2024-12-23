@@ -18,9 +18,9 @@ export default function Card({ pokemon, pokemonList, onClick }) {
         };
     }, [pokemon, pokemonList]);
     return (
-        <div>
-            <img src={link} alt={pokemon} onClick={onClick} />
+        <button onClick={onClick}>
+            <img src={link} alt={pokemon} />
             <div>{pokemon}</div>
-        </div>
+        </button>
     );
 }

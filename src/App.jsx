@@ -43,7 +43,7 @@ function App() {
 
     function onClick(event) {
         setPokemonList(getRandomizedArray(pokemonList));
-        const pokemon = event.target.alt;
+        const pokemon = event.currentTarget.querySelector("img").alt;
         if (pickedPokemons.indexOf(pokemon) !== -1) {
             newGame(difficulty, false);
         } else {
