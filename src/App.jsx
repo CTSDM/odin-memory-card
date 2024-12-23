@@ -26,7 +26,7 @@ function App() {
     }, [numberOfCards]);
 
     return (
-        <>
+        <div className="main-container">
             <Header onChange={newGame} score={score} bestScore={bestScore} />
             <div className="cards">
                 {pokemonList.map((value) => (
@@ -38,7 +38,7 @@ function App() {
                     />
                 ))}
             </div>
-        </>
+        </div>
     );
 
     function onClick(event) {
@@ -54,8 +54,9 @@ function App() {
     }
 
     function newGame(value, isNewDifficulty = true) {
-        if (!isNewDifficulty) {
+        if (isNewDifficulty) {
             setDifficulty(value);
+        } else {
             setPokemonList(getSubsetElements(numberOfCards, pokemonAllArr));
         }
         setPickedPokemons([]);
